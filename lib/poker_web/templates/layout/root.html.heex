@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="csrf-token" content={csrf_token_value()}>
+    <%= live_title_tag assigns[:page_title] || "Planning Poker" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+  </head>
+  <body class="">
+  <header>
+  <nav id="header" class="panel border-b-1 fixed w-full z-10 top-0">
+    <div class="w-full container mx-auto flex flex-wrap items-center py-3">
+      <a class="hover-text flex items-center" title="Poker? I hardly know her!" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-6 h-6 mr-1">
+          <path d="M160,232H96l8.7-46.2A52.1,52.1,0,0,1,28,140C28,88,128,24,128,24S228,88,228,140a52.1,52.1,0,0,1-76.7,45.8Z" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
+        </svg>
+        <span>Planning Poker</span>
+      </a>
+    </div>
+  </nav>
+  </header>
+    <%= @inner_content %>
+  </body>
+</html>
